@@ -47,6 +47,13 @@
     echo "Nilai 1 adalah = ". $nilai_1 ."<br>";
     echo "Nilai 2 adalah = ". $nilai_2 ."<br>";
     echo "Nilai 1 Modulus (sisa bagi) Nilai 2 = ". $hasil;
+    echo "<br><br>";
+
+    echo "Contoh penggunaan Array. <br><br>";
+
+    $data_array = array("Toyota", "Kijang", "Honda");
+
+    echo $data_array[1];
 
     ?>
   </body>
