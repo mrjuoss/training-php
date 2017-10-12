@@ -14,12 +14,12 @@
            <div class="container">
            		<img id="logo" src="images/logo.png">
                 <div id="menu">
-                	<ul>
-                    	<li class="nav1"><a href="index.html">HOME</a></li>
-                        <li class="nav2"><a href="news.html">NEWS</a></li>
-                        <li class="nav3"><a href="products.html">PRODUCTS</a></li>
-                        <li class="nav4"><a href="contact.html">CONTACT</a></li> 
-                        <li class="nav5"><a href="gallery.html">GALLERY</a></li>
+                    <ul>
+                        <li class="nav1"><a href="index.php">HOME</a></li>
+                        <li class="nav2"><a href="news.php">NEWS</a></li>
+                        <li class="nav3"><a href="products.php">PRODUCTS</a></li>
+                        <li class="nav4"><a href="contact.php">CONTACT</a></li> 
+                        <li class="nav5"><a href="gallery.php">GALLERY</a></li>
                     </ul>
                 </div>
            </div>

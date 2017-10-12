@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Berkenalan dengan tag div di html</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrapper {
+            box-sizing: border-box;
+            
+            width: 960px;
+            background-color: red;
+
+            border-style: solid;
+            border-color: black;
+
+            margin: auto;
+            /* margin dengan nilai auto akan membuat letak wrapper ditengah */
+        }
+
+        #wrapper #header {
+           /* Tag dengan id header yang berada di dalam tag dengan id wrapper */
+           height: 100px;
+           background-color: #55ff00; 
+        }
+
+        #wrapper #menu {
+            height: 40px;
+            background-color: lightgray;
+        }
+
+        #wrapper #content {
+            height: 400px;
+            background-color: #FFC;
+        }
+
+        #wrapper #footer {
+            height: 50px;
+            margin-top: 5px;
+            background-color: #000;
+        }
+
+        ul {
+            padding: 10px 10px;
+        }
+
+        li {
+            display: inline;
+        }
+
+        #wrapper #content #contentLeft {
+            background-color: #FC0;
+            width: 400px;
+            height: 400px;
+            float: left;
+        }
+
+        #wrapper #content #contentRight {
+            background-color:white;
+            width: 550px;
+            height: 400px;
+            float: right;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Tag Div adalah tag HTML yang bersifat block.
+         Klo tidak diset property width maka akan selebar ukuran browser
+         Tag ini bersifat elastis (Responsive) jika property width tidak diset
+
+         Beberapa contoh tag HTML yang bersifat block adalah div, h1, dll
+     -->
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="menu">
+            <ul>
+                <li>Home</li>
+                <li>Profile</li>
+                <li>Gallery</li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="contentLeft"></div>
+            <div id="contentRight"></div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
