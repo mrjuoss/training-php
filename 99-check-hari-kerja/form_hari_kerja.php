@@ -4,12 +4,14 @@
     <meta charset="utf-8">
     <title>Form Input Hari kerja</title>
     <link rel="stylesheet" href="css/style.css">
+    <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    -->
   </head>
   <body>
     <div class="#content">
-      test 123
+     Mujaki
     </div>
 
     <div id="wrapper">
@@ -38,7 +40,7 @@
             <!-- /.col-lg-12 -->
           </div>
 
-        <div class="row">
+          <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -149,10 +151,10 @@
         </div>
       </div>
     </div>
+    <!-- /#wrapper -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script>
+<script>
     $(document).ready(function() {
         $("#button-cancel").hide();
         $('#multidate').datepick({
@@ -221,17 +223,5 @@
         });
     });
 </script>
-                    </div>
-                    <!-- /.panel .chat-panel -->
-                </div>
-                <!-- /.col-lg-4 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-  </body>
+</body>
 </html>
