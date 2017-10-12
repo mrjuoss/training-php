@@ -1,0 +1,4 @@
+1. Koneksi ke Server Database dan Pilih Databasenya
+2. Buat perintah SQL
+3. Jalankan perintah SQL
+4. Tampilkan hasil perintah SQL

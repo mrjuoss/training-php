@@ -27,42 +27,46 @@
    <!---------------------------------------- END HEADER -------------------------------->
    <div id="greenLine"></div>
    		<div id="content">
-        	
+            <?php
+                // 1. Buat variabel untuk koneksi ke server dan pilih database
+                $koneksi = new mysqli("localhost","root","","training-php");
+                // 2. Buat perintah SQL
+                $sql = "SELECT * FROM berita";
+                // 3. Jalankan perintah SQL
+                $query = $koneksi->query($sql);
+                // 4. Tampilkan hasil
+                $rows = $query->fetch_assoc();     
+
+            ?>
+            
             <div class="container">
+                <?php 
+                    do { 
+                        // 2017-10-12
+                        $tgl_buat = $rows['created_at'];
+                        $bulan    = substr($tgl_buat,5,2);
+                        $tgl      = substr($tgl_buat,8,2);
+                ?>
             	<div class="newsitem">
-                	<div class="date_circle"><p class="day">28<span class="month">06</span></p></div>
-                    <h2 class="news_title">Duis aute irure dolor in reprehenderit in voluptate velit</h2>
+                	<div class="date_circle">
+                        <p class="day">
+                            <?php echo $bulan; ?>
+                            <span class="month">
+                                <?php echo $tgl; ?>
+                            </span>
+                        </p>
+                    </div>
+                    <h2 class="news_title"><?php echo $rows['judul']; ?></h2>
                     <div class="clear"></div>
-                    <img src="images/page2_img1.jpg" class="news_image">
-                    <p class="news_synopsis">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                    <img src="images-ori/<?php echo $rows['gambar'];?>" width="200" class="news_image">
+                    <p class="news_synopsis">
+                        <?php echo substr($rows['detail'],0,300) ." .....";?>
+                    </p>
                     <a href="#" class="link_detail">Read More</a>
                 </div>
-                
-                <div class="newsitem">
-                	<div class="date_circle"><p class="day">27<span class="month">06</span></p></div>
-                    <h2 class="news_title">Duis aute eaque ipsa quae ab illo inventore veritatis</h2>
-                    <div class="clear"></div>
-                    <img src="images/page2_img1.jpg" class="news_image">
-                    <p class="news_synopsis">mnis iste natus error sit voluptatem accusantium doloremque tis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
-                    <a href="#" class="link_detail">Read More</a>
-                </div>
-                <div class="newsitem">
-                	<div class="date_circle"><p class="day">27<span class="month">06</span></p></div>
-                    <h2 class="news_title">Duis aute eaque ipsa quae ab illo inventore veritatis</h2>
-                    <div class="clear"></div>
-                    <img src="images/page2_img1.jpg" class="news_image">
-                    <p class="news_synopsis">mnis iste natus error sit voluptatem accusantium doloremque tis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi >mnis iste natus error sit voluptatem accusantium doloremque tis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
-                    <a href="#" class="link_detail">Read More</a>
-                </div>
-                <div class="newsitem">
-                	<div class="date_circle"><p class="day">27<span class="month">06</span></p></div>
-                    <h2 class="news_title">Duis aute eaque ipsa quae ab illo inventore veritatis</h2>
-                    <div class="clear"></div>
-                    <img src="images/page2_img1.jpg" class="news_image">
-                    <p class="news_synopsis">mnis iste natus error sit voluptatem accusantium doloremque tis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi</p>
-                    <a href="#" class="link_detail">Read More</a>
-                </div>
-         
+                <?php 
+                    } while ($rows = $query->fetch_assoc());
+                ?>
             </div><!--- END CONTENT WRAPPER -->
             
         </div>
@@ -70,7 +74,7 @@
 		<div id="footer">
         
         	<div class="container">
-            	<p> Copyright &copy; Your Company All Right Reserved</p>
+            	<p> Copyright &copy; Biro Kepegawaian Sekretariat Jenderal Kementerian Kesehatan</p>
             </div>
         
         </div>
