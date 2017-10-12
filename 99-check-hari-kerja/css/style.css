@@ -1,0 +1,9 @@
+body {
+  background-color: red;
+}
+
+div #content {
+  box-sizing: border-box;
+  width: 100px;
+  background-color: blue;
+}
