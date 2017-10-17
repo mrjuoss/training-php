@@ -6,14 +6,18 @@
     ?>
     <div class="loginHolder">
       <form action="login_submit.php" method="post">
-        Username : <input type="text" id="username" name="username" class="username">
+        Username : <input type="text" id="username" name="username" placeholder="Masukkan Username">
         &nbsp; &nbsp; &nbsp;
-        Password : <input type="password" id="password" name="password" class="password">
+        Password : <input type="password" id="password" name="password" placeholder="Masukkan Password">
         &nbsp; &nbsp; &nbsp;
         <input type="submit" name="submit" value="Login">
       </form>
     </div>
-  <?php } else { ?>
+    <?php } else { ?>
+    <?php echo "<div class='user'> Selamat Datang ". $_SESSION['nama_user']."</div>"; ?>
+    &nbsp; &nbsp;
+    <a class="logout" href="logout.php">.:: Log Out ::. </a>
+    <?php } ?>
     <img id="logo" src="images/logo.png">
     <div id="menu">
       <ul>
@@ -26,4 +30,3 @@
     </div>
   </div>
 </div>
-<?php } ?>

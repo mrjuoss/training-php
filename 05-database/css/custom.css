@@ -16,3 +16,17 @@ input#username {
 input#password {
     padding-left: 10px;
 }
+
+.user {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+a.logout {
+    color: white;
+    text-decoration: none;
+    margin-top: -15px;
+    margin-left: -100px;
+    position: absolute;
+}
