@@ -1,8 +1,19 @@
 <div id="header">
   <div class="container">
+    <?php
+    if (!isset($_SESSION['sess_user'])) {
+    //Isset menanyakan nama variabelnya ada atau tidak. Bukan untuk mengecek ada isi atau nilainya
+    ?>
     <div class="loginHolder">
-
+      <form action="login_submit.php" method="post">
+        Username : <input type="text" id="username" name="username" class="username">
+        &nbsp; &nbsp; &nbsp;
+        Password : <input type="password" id="password" name="password" class="password">
+        &nbsp; &nbsp; &nbsp;
+        <input type="submit" name="submit" value="Login">
+      </form>
     </div>
+  <?php } else { ?>
     <img id="logo" src="images/logo.png">
     <div id="menu">
       <ul>
@@ -15,3 +26,4 @@
     </div>
   </div>
 </div>
+<?php } ?>
