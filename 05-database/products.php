@@ -1,3 +1,6 @@
+<?php
+ include("config.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -8,97 +11,48 @@
 
 <body>
 <div id="wrapper">
-  <div id="header">
-        
-           <div class="container">
-           		<img id="logo" src="images/logo.png">
-                <div id="menu">
-                        <ul>
-                                <li class="nav1"><a href="index.php">HOME</a></li>
-                                <li class="nav2"><a href="news.php">NEWS</a></li>
-                                <li class="nav3"><a href="products.php">PRODUCTS</a></li>
-                                <li class="nav4"><a href="contact.php">CONTACT</a></li> 
-                                <li class="nav5"><a href="gallery.php">GALLERY</a></li>
-                            </ul>
-                </div>
-           </div>
-            
-     </div>
+   <?php include "includes/header.php"; ?>
    <!---------------------------------------- END HEADER -------------------------------->
-   <div id="greenLine"></div> 
+   <div id="greenLine"></div>
    <div id="content">
-        	
+
             <div class="container">
                 <!--------------------------------------------------------------------------------->
                 <!-- AGAR RAPI NANTI DI PHP BUAT PRODUCT DESC DENGAN MAKSIMAL KARAKTER 110 CHAR --->
                 <!--------------------------------------------------------------------------------->
-                <div class="product_item">
-                	<div class="number_icon">1</div>
-                    <h2 class="product_title">Product Name</h2>
-                	<a class="example-image-link" href="images/page4_img1.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img src="images/page4_img1.jpg"></a>
-                    <p class="product_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-                    </p>
-                    <a href="#" class="detail_product">Read More</a>
-                </div>
-                <div class="product_item">
-                	<div class="number_icon">2</div>
-                    <h2 class="product_title">Product Name</h2>
-                	<img src="images/page4_img2.jpg">
-                    <p class="product_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-                    </p>
-                    <a href="#" class="detail_product">Read More</a>
-                </div>
-                <div class="product_item">
-                	<div class="number_icon">3</div>
-                    <h2 class="product_title">Product Name</h2>
-                	<img src="images/page4_img3.jpg">
-                    <p class="product_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-                    </p>
-                    <a href="#" class="detail_product">Read More</a>
-                </div>
-                <div class="product_item">
-                	<div class="number_icon">4</div>
-                    <h2 class="product_title">Product Name</h2>
-                	<img src="images/page4_img4.jpg">
-                    <p class="product_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-                    </p>
-                    <a href="#" class="detail_product">Read More</a>
-                </div>
-                <div class="product_item">
-                	<div class="number_icon">5</div>
-                    <h2 class="product_title">Product Name</h2>
-                	<img src="images/page4_img5.jpg">
-                    <p class="product_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-                    </p>
-                    <a href="#" class="detail_product">Read More</a>
-                </div>
-                <div class="product_item">
-                	<div class="number_icon">6</div>
-                    <h2 class="product_title">Product Name</h2>
-                	<img src="images/page4_img6.jpg">
-                    <p class="product_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
-                    </p>
-                    <a href="#" class="detail_product">Read More</a>
-                </div>
+                <?php
+                  $koneksi = new mysqli("localhost","root","","training-php");
 
-                
-         
+                  $sql = "SELECT * FROM product";
+
+                  $query = $koneksi->query($sql);
+
+                  while ($data = $query->fetch_object()) {
+                    ?>
+                      <div class="product_item">
+                        <div class="number_icon"><?php echo $data->product_id; ?></div>
+                          <h3 class="product_title"><?php echo $data->product_name; ?></h3>
+                        <a class="example-image-link" href="images/images_product/<?php echo $data->product_photo; ?>" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                          <img src="images/images_product/<?php echo $data->product_photo; ?>" width="270" height="110"></a>
+                          <p class="product_desc">
+                            <?php echo substr($data->product_desc,0,100); ?>
+                          </p>
+                          <a href="" class="detail_product">Read More</a>
+                      </div>
+                  <?php
+                  }
+                ?>
+
             </div><!--- END CONTENT WRAPPER -->
-            
-       </div> 
+
+       </div>
 <!--------------------------------------- END CONTENT CONTENT--------------------------->
 	   <div id="footer">
-        
+
         	<div class="container">
             	<p> Copyright &copy; Your Company All Right Reserved</p>
             </div>
-        
+
        </div>
 <!---------------------------------------- END FOOTER --------------------------------->
 </div>

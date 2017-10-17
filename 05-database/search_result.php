@@ -1,7 +1,3 @@
-<?php
- include("config.php");
-?>
-
 <!doctype html>
 <html>
 <head>
@@ -13,7 +9,6 @@
 
 <body>
 <div id="wrapper">
-  
    <?php include "includes/header.php"; ?>
    <!---------------------------------------- END HEADER -------------------------------->
    <div id="greenLine"></div>
@@ -21,10 +16,11 @@
 
             <?php
                 // 1. Buat variabel untuk koneksi ke server dan pilih database
-                // $koneksi = new mysqli("localhost","root","","training-php");
+                $koneksi = new mysqli("localhost","root","","training-php");
 
-                // 2. Buat perintah SQL dan tampung ke dalam sebuah variabel
-                $sql = "SELECT * FROM berita ORDER BY created_at DESC";
+                $search_text = $_POST['search_text'];
+                // 2.
+                $sql = "SELECT * FROM berita where judul LIKE '%$search_text%' ORDER BY created_at DESC";
 
                 // 3. Jalankan perintah SQL dan tampung ke dalam sebuah variabel
                 $query = $koneksi->query($sql);

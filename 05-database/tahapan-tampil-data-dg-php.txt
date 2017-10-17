@@ -2,3 +2,14 @@
 2. Buat perintah SQL
 3. Jalankan perintah SQL
 4. Tampilkan hasil perintah SQL
+
+Format Tanggal mysql
+Y-m-d H:i:s
+
+$tanggal = 2017-10-17 01:44:56
+           0123456789 dst
+
+4 Karakter pertama tanggal diatas adalah 2017 (karakter ke 0 s.d. 3)
+
+Jika ingin mendapatkan data bulan maka gunakan substr($tanggal,5,2);
+//Karakter yang diambil adalah mulai dari karakter ke 5 sebanyak 2 angka (karakter ke 5 dan 6)
