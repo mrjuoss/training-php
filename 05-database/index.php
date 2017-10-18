@@ -56,13 +56,7 @@
 
         </div>
 <!---------------------------------------- END CONTENT ------------------------------->
-        <div id="footer">
-
-        	<div class="container">
-            	<p> Copyright &copy; Your Company All Right Reserved</p>
-            </div>
-
-        </div>
+    <?php include "includes/footer.php"; ?>
 <!---------------------------------------- END FOOTER --------------------------------->
 
     </div>

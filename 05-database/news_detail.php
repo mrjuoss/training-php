@@ -1,4 +1,5 @@
 <?php
+ session_start();
  include("config.php");
 ?>
 <!doctype html>
@@ -11,22 +12,7 @@
 
 <body>
 <div id="wrapper">
-  <div id="header">
-
-           <div class="container">
-           		<img id="logo" src="images/logo.png">
-                <div id="menu">
-                        <ul>
-                                <li class="nav1"><a href="index.php">HOME</a></li>
-                                <li class="nav2"><a href="news.php">NEWS</a></li>
-                                <li class="nav3"><a href="products.php">PRODUCTS</a></li>
-                                <li class="nav4"><a href="contact.php">CONTACT</a></li>
-                                <li class="nav5"><a href="gallery.php">GALLERY</a></li>
-                            </ul>
-                </div>
-           </div>
-
-     </div>
+   <?php include "includes/header.php"; ?>
    <!---------------------------------------- END HEADER -------------------------------->
    <div id="greenLine"></div>
    		<div id="content">
@@ -57,6 +43,8 @@
                     </p>
                 </div>
 
+                <?php
+                if (isset($_SESSION['sess_user'])) { ?>
    <!------------- Form Comment ---------------------------------------------->
                  <form class="comment_form" action="process/adding_comment.php" method="post">				<h4>Leave A Comment</h4>
                     <input type="hidden" name="id_news" value="#"><br>
@@ -65,6 +53,8 @@
                     <textarea name="comment" placeholder="Your Comment" required></textarea><br>
                 	<input type="submit" value="Comment">
                  </form>
+
+                <?php } ?>
    <!-------------------------------------------------------------------------->
 
    <!------------- List Comment ----------------------------------------------->
@@ -128,13 +118,7 @@
 
         </div>
 <!---------------------------------------- END CONTENT ------------------------------->
-		<div id="footer">
-
-        	<div class="container">
-            	<p> Copyright &copy; Your Company All Right Reserved</p>
-            </div>
-
-        </div>
+		<?php include "includes/footer.php" ?>
 <!---------------------------------------- END FOOTER -------------------------------->
 </div>
 </body>
