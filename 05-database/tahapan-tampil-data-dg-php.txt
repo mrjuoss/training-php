@@ -13,3 +13,9 @@ $tanggal = 2017-10-17 01:44:56
 
 Jika ingin mendapatkan data bulan maka gunakan substr($tanggal,5,2);
 //Karakter yang diambil adalah mulai dari karakter ke 5 sebanyak 2 angka (karakter ke 5 dan 6)
+
+Pelajari kembali tentang session, manfaat, dan cara penggunaan secara maksimal
+Referensi -> http://www.tizag.com/phpT/phpsessions.php
+
+fungsi isset() untuk mengetahui sebuah variabel sudah dibuat atau belum
+fungsi empty() untuk mengetahui sebuah variabel ada isinya atau tidak
