@@ -16,6 +16,7 @@ Jika ingin mendapatkan data bulan maka gunakan substr($tanggal,5,2);
 
 Pelajari kembali tentang session, manfaat, dan cara penggunaan secara maksimal
 Referensi -> http://www.tizag.com/phpT/phpsessions.php
+             https://www.tutorialspoint.com/php/php_sessions.htm
 
 fungsi isset() untuk mengetahui sebuah variabel sudah dibuat atau belum
 fungsi empty() untuk mengetahui sebuah variabel ada isinya atau tidak

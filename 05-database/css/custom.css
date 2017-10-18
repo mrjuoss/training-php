@@ -27,6 +27,20 @@ a.logout {
     color: white;
     text-decoration: none;
     margin-top: -15px;
-    margin-left: -100px;
+    margin-left: 80px;
     position: absolute;
+}
+
+div#registerHolder {
+    padding: 25px;
+    /* margin: auto; */
+}
+
+.formRegister {
+  margin-top: 10px;
+}
+
+.formRegister input {
+  margin: 3px 0px;
+  padding-left: 10px;
 }

@@ -5,7 +5,7 @@ session_start();
 include "config.php";
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 $sql = "SELECT * FROM member WHERE member_username = '".$username."' AND member_password = '".$password."' ";
 /* Debug Perintah SQL untuk mengetahui SQL nya sudah benar atau tidak
