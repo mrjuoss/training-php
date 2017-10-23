@@ -1,0 +1,68 @@
+#container {
+  width: 950px;
+}
+
+header {
+  height: 150px;
+  background-color: #ACD433;
+  position: relative;
+}
+
+header .friend-header {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-size: 36px;
+  color: white;
+}
+
+.clearfix {
+  clear: both;
+}
+
+#content {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: #DEEEAD;
+  height: 600px;
+}
+
+.friendHolder {
+  background-color: #CDE585;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid red;
+  border-style: dashed;
+  border-color: red;
+  overflow: hidden;
+}
+
+#content .friendHolder .foto {
+  float: left;
+}
+
+#content .friendHolder .foto img {
+  height: 130px;
+  width: 100px;
+  border-radius: 10%;
+}
+
+#content .friendHolder .informasi {
+  float: left;
+  margin-left: 10px;
+}
+
+footer {
+  position: relative;
+  height: 50px;
+  background-color: #576D17;
+}
+
+footer .copyright {
+  position: absolute;
+  color: white;
+  top: 15px;
+  left: 400px;
+}
