@@ -8,9 +8,7 @@
   </head>
   <body>
     <div id="container">
-      <header>
-        <div class="friend-header">Friend List</div>
-      </header>
+      <?php include "includes/header.php"; ?>
       <div id="content">
         <?php
           $sql = "SELECT friend_id, friend_name, photo, division, status FROM friends ORDER BY friend_id ASC";
@@ -36,9 +34,7 @@
           }
         ?>
       </div>
-      <footer>
-        <div class="copyright">Copyright 2017</div>
-      </footer>
+      <?php include "includes/footer.php"; ?>
     </div>
   </body>
 </html>
