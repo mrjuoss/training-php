@@ -107,7 +107,7 @@
 									<td class="align-center"><?php echo $no; ?></td>
 									<td><?php echo $row->judul; ?></td>
 									<td>
-											<img style="width:100%;" src="../images/<?php echo $row->gambar; ?>" />
+											<img style="width:100%;" src="<?php echo $base_url?>/images/<?php echo $row->gambar; ?>" />
 									</td>
 									<td>
 										<?php echo substr($row->detail,0,300); ?>

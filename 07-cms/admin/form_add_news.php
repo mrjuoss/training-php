@@ -1,8 +1,8 @@
 <!doctype html>
-<html> 
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Add News | Progress Business</title> 
+<title>Add News | Progress Business</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/navi.css" media="screen" />
 <link rel="icon" type="image/png" href="img/admin-button-icon-hi.png"/>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="nav"> 
+		<div id="nav">
 			<ul>
 				<li class="upp"><a href="news_admin.php">News</a>
 				</li>
@@ -38,7 +38,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<div id="content">
 		<div id="sidebar">
 			<div class="box">
@@ -53,39 +53,34 @@
 			</div>
 		</div>
 		<div id="main">
-        
-        
-		  <div class="clear"></div>
-          
-            
-            <div class="full_w" id="form_geje">
-			  <div class="h_title">Add News </div>
-				<form action="#" method="#">
-					<div class="element">
-						<label for="title"> Title <span class="red">(required)</span></label>
-						<input id="title" name="title" class="text <?php //err ?>" />
-					</div>
-                    
-                    <div class="element">  
-                    	
-                        <label for="description"> Description <span class="red">(required)</span></label>
-						<textarea class="textarea" name="description" rows="10" > </textarea>
- 
-                    </div>
-                    
-                    <div class="element">
-						<label for="gambar">Ganti File Fambar</label>
-						<input type="file" name="images" />
-					</div>
 
-					<div class="entry">
-					  <button type="submit" class="add">Save </button> <button class="cancel">Cancel</button>
-					</div>
-				</form>
-		  </div>
-            
-            
-	  </div>
+
+		  <div class="clear"></div>
+				<div class="full_w" id="form_geje">
+			  	<div class="h_title">Add News </div>
+
+					<form action="form_submit.php" method="post" enctype="multipart/form-data">
+						<div class="element">
+							<label for="title"> Title <span class="red">(required)</span></label>
+							<input id="title" name="title" class="text <?php //err ?>" />
+						</div>
+
+            <div class="element">
+              <label for="description"> Description <span class="red">(required)</span></label>
+							<textarea class="textarea" name="description" rows="10" > </textarea>
+            </div>
+
+            <div class="element">
+							<label for="gambar">Ganti File Fambar</label>
+							<input type="file" name="images" />
+						</div>
+
+						<div class="entry">
+					  	<button type="submit" class="add">Save </button> <button class="cancel">Cancel</button>
+						</div>
+					</form>
+		  	</div>
+	  	</div>
 		<div class="clear"></div>
 	</div>
 
