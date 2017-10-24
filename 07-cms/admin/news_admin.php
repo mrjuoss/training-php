@@ -115,9 +115,9 @@
 									<td><?php echo $row->created_at; ?></td>
 
 									<td>
-										<a href="#" class="table-icon edit" title="Edit"></a>
+										<a href="<?php echo $base_url.'/admin/news_admin.php?id='.$row->id; ?>" class="table-icon edit" title="Edit"></a>
 										<a href="#" class="table-icon archive" title=" View Comment"></a>
-										<a href="#" class="table-icon delete" title="Delete"></a>
+										<a onclick="return confirm ('Are you sure to delete this data ?');" href="<?php echo $base_url.'/admin/news_delete.php?id='.$row->id; ?>" class="table-icon delete" title="Delete"></a>
 									</td>
 								</tr>
 
