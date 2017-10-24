@@ -1,8 +1,15 @@
+<?php
+
+	session_start();
+	include "../lib/config.php";
+
+?>
+
 <!doctype html>
-<html> 
+<html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Admin | Progress Business</title> 
+<title>Admin | Progress Business</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/navi.css" media="screen" />
 <link rel="icon" type="image/png" href="img/admin-button-icon-hi.png"/>
@@ -23,7 +30,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="nav"> 
+		<div id="nav">
 			<ul>
 				<li class="upp"><a href="news_admin.php">News</a>
 				</li>
@@ -38,7 +45,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<div id="content">
 		<div id="sidebar">
 			<div class="box">
@@ -53,29 +60,29 @@
 			</div>
 		</div>
 		<div id="main">
-        
-        
+
+
 		  <div class="clear"></div>
-          
-			
-			
+
+
+
 			<div class="full_w">
 				<div class="h_title">Manage pages - News</div>
 				<h2>News</h2><?php //judul table ?>
 				<p>Ini adalah Content Berita, untuk menambah berita baru, silahkan menginput berita pada Form dibawah</p>
-                <a href="form_add_news.php" style="float:right; margin-bottom:0px;"> 
+                <a href="form_add_news.php" style="float:right; margin-bottom:0px;">
                 <button type="submit" class="add">Add News</button>
                 </a>
-				
+
 				<div class="entry">
 					<div class="sep"></div>
 				</div>
-               
-                
+
+
 				<table>
 					<thead>
 						<tr>
-							<th scope="col">Id News</th>
+							<th scope="col">No</th>
 							<th scope="col">Title</th>
 							<th scope="col">Image</th>
 							<th scope="col">Synopsis</th>
@@ -83,46 +90,46 @@
 							<th scope="col" style="width: 65px;">Modify</th>
 						</tr>
 					</thead>
-						
+
 					<tbody>
-                  
-						<tr>
-							<td class="align-center">1</td>
-							<td>Bukan PDIP, Siapa Pemilik Domain Internet "Jokowi.id"?</td>
-							<td>
-                            	<img style="width:100%;" src="news_images/jokowi.id.jpg" />
-                            </td>
-                            <td>Jadi Siapa dong yang punya ? JAKARTA, KOMPAS.com &mdash; Nama domain internet &quot;Jokowi.id&quot; ternyata telah didaftarkan dan dibeli. Siapakah pemiliknya dan akan digunakan untuk apa</td>
-							<td>2014-03-25 11:20:09</td>
-							
-							<td>
-								<a href="#" class="table-icon edit" title="Edit"></a>
-								<a href="#" class="table-icon archive" title=" View Comment"></a>
-								<a href="#" class="table-icon delete" title="Delete"></a>
-							</td>
-						</tr>
-                        
-                        <tr>
-							<td class="align-center">1</td>
-							<td>Bukan PDIP, Siapa Pemilik Domain Internet "Jokowi.id"?</td>
-							<td>
-                            	<img style="width:100%;" src="news_images/jokowi.id.jpg" />
-                            </td>
-                            <td>Kisah Mereka yang Hilang Bersama Malaysia Airlines</td>
-							<td>2014-03-25 11:21:42</td>
-							
-							<td>
-								<a href="#" class="table-icon edit" title="Edit"></a>
-								<a href="#" class="table-icon archive" title=" View Comment"></a>
-								<a href="#" class="table-icon delete" title="Delete"></a>
-							</td>
-						</tr>
-                        
-                        
+						<?php
+							// Buat Perintah SQL
+							$sql = "SELECT * FROM berita ORDER BY id ASC";
+							// Jalankan Perintah SQL
+							$query = $koneksi->query($sql);
+							// Buat Variabel untuk nomer dg nama variabel no
+							$no = 1;
+							// Proses looping untuk menampilkan data dengan fetch_object()
+							while ($row = $query->fetch_object())
+							{
+								?>
+								<tr>
+									<td class="align-center"><?php echo $no; ?></td>
+									<td><?php echo $row->judul; ?></td>
+									<td>
+											<img style="width:100%;" src="../images/<?php echo $row->gambar; ?>" />
+									</td>
+									<td>
+										<?php echo substr($row->detail,0,300); ?>
+									</td>
+									<td><?php echo $row->created_at; ?></td>
+
+									<td>
+										<a href="#" class="table-icon edit" title="Edit"></a>
+										<a href="#" class="table-icon archive" title=" View Comment"></a>
+										<a href="#" class="table-icon delete" title="Delete"></a>
+									</td>
+								</tr>
+
+								<?php
+								// Increment nomer
+								$no ++;
+							}
+						?>
 					</tbody>
 				</table>
 
-                
+
 				<div class="entry">
 					<div class="pagination">
 
@@ -134,14 +141,14 @@
 						<a href="">23</a>
 
 					</div>
-                    
-					<div class="sep hide"></div>		
-				  <a class="button add hide" href="">Add new page</a> <a class="button hide" href="">Categories</a> 
+
+					<div class="sep hide"></div>
+				  <a class="button add hide" href="">Add new page</a> <a class="button hide" href="">Categories</a>
 				</div>
-        
+
 			</div>
-            
-      
+
+
 	  </div>
 		<div class="clear"></div>
 	</div>
@@ -164,4 +171,3 @@ document.getElementById("date").innerHTML = d.toDateString();
 </script>
 
 </html>
-
