@@ -160,9 +160,19 @@
 						<?php
 							for ($i= 1; $i <= $page; $i++)
 							{
-								?>
-									<a href="news_admin.php?page=<?php echo $i; ?>"><?php echo $i; ?> </a>
-								<?php
+								// Check apakah $i = halaman yang aktif
+								if ($i == $active_view)
+								{
+									// Jika $i = halaman yang aktif maka tambahkan class active
+									?>
+										<span class="active"><?php echo $i; ?> </span>
+									<?php
+								} else {
+									// Jika tidak maka tampilkan link
+									?>
+										<a href="news_admin.php?page=<?php echo $i; ?>"> <?php echo $i; ?> </a>
+									<?php
+								}
 							}
 						?>
 					</div>
@@ -170,10 +180,7 @@
 					<div class="sep hide"></div>
 				  <a class="button add hide" href="">Add new page</a> <a class="button hide" href="">Categories</a>
 				</div>
-
 			</div>
-
-
 	  </div>
 		<div class="clear"></div>
 	</div>
