@@ -93,12 +93,24 @@
 
 					<tbody>
 						<?php
+							// Tentukan jumlah view per page atau per halaman
+							$view_perhalaman = 5;
+							// Check halaman atau page
+							if (isset($_GET['page']))
+							{
+								$active_view = $_GET['page'];
+							} else {
+								$active_view = 1;
+							}
+							// Check start data
+							$start_data = ($active_view - 1) * $view_perhalaman;
 							// Buat Perintah SQL
-							$sql = "SELECT * FROM berita ORDER BY id ASC";
+							$sql = "SELECT * FROM berita ORDER BY id ASC LIMIT ".$start_data.",".$view_perhalaman;
 							// Jalankan Perintah SQL
 							$query = $koneksi->query($sql);
 							// Buat Variabel untuk nomer dg nama variabel no
-							$no = 1;
+							$no = $start_data + 1;
+							// $no = ($active_view == 1 ? 1 : ($view_perhalaman + 1) );
 							// Proses looping untuk menampilkan data dengan fetch_object()
 							while ($row = $query->fetch_object())
 							{
@@ -131,15 +143,28 @@
 
 
 				<div class="entry">
+					<?php
+					// Dapatkan total data
+						$sqlTotal = "SELECT * FROM berita";
+
+						$queryTotal = $koneksi->query($sqlTotal);
+
+						$dataTotal = $queryTotal->num_rows;
+
+						// echo $dataTotal; exit();
+						$page = ceil($dataTotal/$view_perhalaman);
+						// Fungsi ceil untuk pembulatan ke atas Ex. 17/5 = 3,.. Dibulatkan jadi 4
+						// echo $page; exit();
+					?>
 					<div class="pagination">
-
-						<span class="active">1</span>
-						<a href="">2</a>
-						<a href="">3</a>
-						<a href="">4</a>
-						<span>...</span>
-						<a href="">23</a>
-
+						<?php
+							for ($i= 1; $i <= $page; $i++)
+							{
+								?>
+									<a href="news_admin.php?page=<?php echo $i; ?>"><?php echo $i; ?> </a>
+								<?php
+							}
+						?>
 					</div>
 
 					<div class="sep hide"></div>
