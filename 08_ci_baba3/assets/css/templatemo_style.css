@@ -276,7 +276,20 @@ h6 {
 	width: 220px; 
 	height: 20px; 
 	margin-bottom: 0; 
+	overflow: hidden;
+	position: relative;
 	background: url(../images/templatemo_sidebar_header.jpg) no-repeat; color: #999 
+}
+.sidebar_box h3 .more_link{
+	display: block;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	position: absolute;
+	top: 4px;
+	right: 5px;
+	background: transparent;
+	cursor: default;
 }
 
 .sidebar_box span.bottom {
@@ -334,7 +347,10 @@ h6 {
 	width: 220px;
 	text-align: center;
 	margin: 0 10px 30px 0;
+	/*background-color:#633;*/
 }
+
+
 
 .product_box img {
 	margin-bottom: 5px;
@@ -372,6 +388,10 @@ h6 {
 	line-height: 28px;
 	text-align: center;	
 	background: url(../images/detail.jpg)
+}
+
+.product_box:nth-child(3n+1) {
+	margin-right: 0;
 }
 
 .checkout input { 
